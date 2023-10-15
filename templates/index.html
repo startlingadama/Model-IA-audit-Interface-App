@@ -1,0 +1,28 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Interface du Model IA de l'audit - by startling</title>
+</head>
+<body>
+    <h1>Interface du Model IA de l'audit </h1>
+    <form method="POST" action="/">
+        <label for="prompt">Entrez votre question:</label>
+        <input type="text" id="prompt" name="prompt" required><br><br>
+        <input type="submit" value="Generate">
+    </form>
+    {% if prompt %}
+        <h2> Question: {{ prompt }}</h2>
+        <h2> Bonne question !! &#x1F603; prend un pizza &#x1F355; </h2>
+    {% endif %}
+    {% if bon_prompt %}
+        <h2> Voila bonne question !! &#x1F916; </h2>
+        <h2> La bonne question: {{ prompt }}</h2>
+    {% endif %}
+    <h2>Reponse: {{ response }}</h2>
+    <p> All Rights Reserved &copy; by startlingadama.</p>
+</body>
+</html>
